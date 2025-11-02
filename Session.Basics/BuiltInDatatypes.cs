@@ -1,10 +1,10 @@
 ﻿using System;
 
-namespace Session.BuiltinDataTypes;
+namespace Session.Basics;
 
-public class Program
+public class BuiltInDatatypes : ITopic
 {
-	static void Main(string[] args)
+	public void Run()
 	{
 		// Datatypes
 
