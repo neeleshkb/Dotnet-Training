@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Session.Basics.Topics;
+using System;
 
 namespace Session.Basics;
 
@@ -9,8 +10,11 @@ public class Program
 		//ITopic builtInDataTypes = new BuiltInDatatypes();
 		//builtInDataTypes.Run();
 
-		ITopic variablesAndOperators = new VariablesAndOperators();
-		variablesAndOperators.Run();
+		//ITopic variablesAndOperators = new VariablesAndOperators();
+		//variablesAndOperators.Run();
+
+		ITopic controlFLowAndLoops = new ControlFlowAndLoops();
+		controlFLowAndLoops.Run();
 
 		Console.WriteLine("Press any key to exit...");
 		Console.ReadKey();
