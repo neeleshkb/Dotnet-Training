@@ -1,5 +1,4 @@
-﻿using Session.Basics.Topics;
-using System;
+﻿using System;
 
 namespace Session.Basics;
 
@@ -13,8 +12,11 @@ public class Program
 		//ITopic variablesAndOperators = new VariablesAndOperators();
 		//variablesAndOperators.Run();
 
-		ITopic controlFLowAndLoops = new ControlFlowAndLoops();
-		controlFLowAndLoops.Run();
+		//ITopic controlFLowAndLoops = new ControlFlowAndLoops();
+		//controlFLowAndLoops.Run();
+
+		ITopic classesAndObjects = new ClassesAndObjects();
+		classesAndObjects.Run();
 
 		Console.WriteLine("Press any key to exit...");
 		Console.ReadKey();
