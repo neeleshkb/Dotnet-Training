@@ -15,8 +15,11 @@ public class Program
 		//ITopic controlFLowAndLoops = new ControlFlowAndLoops();
 		//controlFLowAndLoops.Run();
 
-		ITopic classesAndObjects = new ClassesAndObjects();
-		classesAndObjects.Run();
+		//ITopic classesAndObjects = new ClassesAndObjects();
+		//classesAndObjects.Run();
+
+		ITopic structsAndObjects = new StructsAndObjects();
+		structsAndObjects.Run();
 
 		Console.WriteLine("Press any key to exit...");
 		Console.ReadKey();
