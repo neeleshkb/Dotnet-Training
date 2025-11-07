@@ -18,8 +18,11 @@ public class Program
 		//ITopic classesAndObjects = new ClassesAndObjects();
 		//classesAndObjects.Run();
 
-		ITopic structsAndObjects = new StructsAndObjects();
-		structsAndObjects.Run();
+		//ITopic structsAndObjects = new StructsAndObjects();
+		//structsAndObjects.Run();
+
+		ITopic valueAndReferenceTypes = new ValueAndReferenceTypes();
+		valueAndReferenceTypes.Run();
 
 		Console.WriteLine("Press any key to exit...");
 		Console.ReadKey();
