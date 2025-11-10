@@ -27,8 +27,11 @@ public class Program
 		//ITopic enumerations = new Enumerations();
 		//enumerations.Run();
 
-		ITopic interfacesBasics = new InterfacesBasics();
-		interfacesBasics.Run();
+		//ITopic interfacesBasics = new InterfacesBasics();
+		//interfacesBasics.Run();
+
+		ITopic constantsAndStaticMembers = new ConstantsAndStaticMembers();
+		constantsAndStaticMembers.Run();
 
 		Console.WriteLine("Press any key to exit...");
 		Console.ReadKey();
