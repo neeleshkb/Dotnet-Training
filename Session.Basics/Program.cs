@@ -21,8 +21,11 @@ public class Program
 		//ITopic structsAndObjects = new StructsAndObjects();
 		//structsAndObjects.Run();
 
-		ITopic valueAndReferenceTypes = new ValueAndReferenceTypes();
-		valueAndReferenceTypes.Run();
+		//ITopic valueAndReferenceTypes = new ValueAndReferenceTypes();
+		//valueAndReferenceTypes.Run();
+
+		ITopic enumerations = new Enumerations();
+		enumerations.Run();
 
 		Console.WriteLine("Press any key to exit...");
 		Console.ReadKey();
