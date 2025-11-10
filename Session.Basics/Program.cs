@@ -24,8 +24,11 @@ public class Program
 		//ITopic valueAndReferenceTypes = new ValueAndReferenceTypes();
 		//valueAndReferenceTypes.Run();
 
-		ITopic enumerations = new Enumerations();
-		enumerations.Run();
+		//ITopic enumerations = new Enumerations();
+		//enumerations.Run();
+
+		ITopic interfacesBasics = new InterfacesBasics();
+		interfacesBasics.Run();
 
 		Console.WriteLine("Press any key to exit...");
 		Console.ReadKey();
