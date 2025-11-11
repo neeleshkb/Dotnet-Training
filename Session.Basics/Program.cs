@@ -30,8 +30,11 @@ public class Program
 		//ITopic interfacesBasics = new InterfacesBasics();
 		//interfacesBasics.Run();
 
-		ITopic constantsAndStaticMembers = new ConstantsAndStaticMembers();
-		constantsAndStaticMembers.Run();
+		//ITopic constantsAndStaticMembers = new ConstantsAndStaticMembers();
+		//constantsAndStaticMembers.Run();
+
+		Generics generics = new Generics();
+		generics.Run();
 
 		Console.WriteLine("Press any key to exit...");
 		Console.ReadKey();

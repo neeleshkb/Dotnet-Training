@@ -1,9 +1,58 @@
 ﻿namespace Session.Basics
 {
+	public interface ILogin
+	{
+		void Login(string username, string password);
+		void Logout();
+	}
+
+	public class GoogleLogin : ILogin
+	{
+		public void Login(string username, string password)
+		{
+			System.Console.WriteLine($"Logging in to Google with username: {username}");
+		}
+		public void Logout()
+		{
+			System.Console.WriteLine("Logging out from Google");
+		}
+	}
+
+	public class LinkedinLogin : ILogin
+	{
+		public void Login(string username, string password)
+		{
+			System.Console.WriteLine($"Logging in to LinkedIn with username: {username}");
+		}
+		public void Logout()
+		{
+			System.Console.WriteLine("Logging out from LinkedIn");
+		}
+	}
+
 	public class InterfacesBasics : ITopic
 	{
+		public void Login(ILogin login, string username, string password)
+		{
+			login.Login(username, password);
+		}
+
 		public void Run()
 		{
+			bool useGoogle = true;
+			bool useLinkedIn = false;
+			if (useGoogle)
+			{
+				GoogleLogin googleLogin = new GoogleLogin();
+				Login(googleLogin, "user", "password");
+			}
+			else if (useLinkedIn)
+			{
+				ILogin linkedinLogin = new LinkedinLogin();
+				Login(linkedinLogin, "user", "password");
+			}
+
+
 			/*
 			 * What is an Interface?
 			 * An interface is a contract that defines a set of methods,
