@@ -33,8 +33,12 @@ public class Program
 		//ITopic constantsAndStaticMembers = new ConstantsAndStaticMembers();
 		//constantsAndStaticMembers.Run();
 
-		Generics generics = new Generics();
-		generics.Run();
+		//Generics generics = new Generics();
+		//generics.Run();
+
+		ITopic collectionsPart1 = new CollectionsPart1();
+		collectionsPart1.Run();
+
 
 		Console.WriteLine("Press any key to exit...");
 		Console.ReadKey();
