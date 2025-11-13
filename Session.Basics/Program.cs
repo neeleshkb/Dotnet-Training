@@ -39,8 +39,11 @@ public class Program
 		//ITopic collectionsPart1 = new CollectionsPart1();
 		//collectionsPart1.Run();
 
-		ITopic collectionsPart2 = new CollectionsPart2();
-		collectionsPart2.Run();
+		//ITopic collectionsPart2 = new CollectionsPart2();
+		//collectionsPart2.Run();
+
+		ITopic functionPointerDelegate = new FunctionPointerDelegate();
+		functionPointerDelegate.Run();
 
 		Console.WriteLine("Press any key to exit...");
 		Console.ReadKey();
