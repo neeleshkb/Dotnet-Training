@@ -42,8 +42,11 @@ public class Program
 		//ITopic collectionsPart2 = new CollectionsPart2();
 		//collectionsPart2.Run();
 
-		ITopic functionPointerDelegate = new FunctionPointerDelegate();
-		functionPointerDelegate.Run();
+		//ITopic functionPointerDelegate = new FunctionPointerDelegate();
+		//functionPointerDelegate.Run();
+
+		ITopic oops = new Oops();
+		oops.Run();
 
 		Console.WriteLine("Press any key to exit...");
 		Console.ReadKey();
