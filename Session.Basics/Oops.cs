@@ -45,6 +45,10 @@ namespace Session.Basics
 			Console.WriteLine($"Account Number: {jane.GetAccountNumber()}, Balance: {jane.GetBalance()}");
 
 			//StringConcat();
+
+			int increment = Calculator.Add(1);
+			int convertFromString = Calculator.Add("10");
+			int add = Calculator.Add(5, 10);
 		}
 
 		private static void StringConcat()
@@ -78,7 +82,7 @@ namespace Session.Basics
 
 	public abstract class BankAccount : IBankAccount
 	{
-		protected int accountNumber;
+		protected int accountNumber;   // Camel Case
 		protected float balance;
 
 		// Base/Parent class constructor
@@ -88,7 +92,7 @@ namespace Session.Basics
 			this.balance = balance;
 		}
 
-		public int GetAccountNumber()
+		public int GetAccountNumber()  // Pascal Case
 		{
 			return accountNumber;
 		}
@@ -98,7 +102,13 @@ namespace Session.Basics
 			return balance;
 		}
 
-		public abstract void Deposit(float amount);
+		public virtual void Deposit(float amount)  // Dynamic Polymorphism - Method Overriding
+		{
+			if (amount > 0)
+			{
+				this.balance += amount;
+			}
+		}
 
 		public abstract void Withdraw(float amount);
 	}
@@ -111,13 +121,13 @@ namespace Session.Basics
 		{
 		}
 
-		public override void Deposit(float amount)
-		{
-			if (amount > 0)
-			{
-				this.balance += amount;
-			}
-		}
+		//public override void Deposit(float amount)
+		//{
+		//	if (amount > 0)
+		//	{
+		//		this.balance += amount;
+		//	}
+		//}
 
 		public override void Withdraw(float amount)
 		{
@@ -131,6 +141,7 @@ namespace Session.Basics
 	public class CurrentAccount : BankAccount
 	{
 		private const float overdraftLimit = 500;
+		private bool isActivated = false;
 
 		// Derived/Child class constructor
 		public CurrentAccount(int accountNumber, float balance)
@@ -138,15 +149,27 @@ namespace Session.Basics
 		{
 		}
 
+		//public override void Deposit(float amount) // Dynamic Polymorphism - Method Overriding
+		//{
+		//	if (amount > 0)
+		//	{
+		//		this.balance += amount;
+		//	}
+		//}
+
 		public override void Deposit(float amount)
 		{
-			if (amount > 0)
+			if (isActivated)
 			{
-				this.balance += amount;
+				base.Deposit(amount); // Calling base class method
+			}
+			else
+			{
+				throw new InvalidOperationException("Account is not activated.");
 			}
 		}
 
-		public override void Withdraw(float amount)
+		public override void Withdraw(float amount)  // Dynamic Polymorphism - Method Overriding
 		{
 			if (amount > 0 && amount <= (balance + overdraftLimit))
 			{
@@ -186,5 +209,26 @@ namespace Session.Basics
 		//{
 		//	account.Deposit(amount);
 		//}
+	}
+
+	public class Calculator
+	{
+		// Static Polymorphism - Method Overloading
+		// Same method name with different number of parameters
+		// Same method name with different data types
+		public static int Add(int number)
+		{
+			return number + 1;
+		}
+
+		public static int Add(string n1)
+		{
+			return int.Parse(n1);
+		}
+
+		public static int Add(int n1, int n2)
+		{
+			return n1 + n2;
+		}
 	}
 }
