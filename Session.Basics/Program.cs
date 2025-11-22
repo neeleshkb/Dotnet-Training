@@ -48,28 +48,31 @@ public class Program
 		//ITopic oops = new Oops();
 		//oops.Run();
 
-		ITopic exceptionsBasics = new ExceptionsBasics();
+		//ITopic exceptionsBasics = new ExceptionsBasics();
 
-		try
-		{
-			exceptionsBasics.Run();
-		}
-		catch (NotImplementedException nie)
-		{
-			Console.WriteLine("Caught NotImplementedException:");
-			Console.WriteLine(nie.Message);
-			Console.WriteLine(nie.StackTrace);
-		}
-		catch (Exception e)
-		{
-			Console.WriteLine($"Exception caught: {e.Message}");
-			Console.WriteLine(e.Message);
-			Console.WriteLine(e.StackTrace);
-		}
-		finally
-		{
-			// Resource cleanup code can go here	
-		}
+		//try
+		//{
+		//	exceptionsBasics.Run();
+		//}
+		//catch (NotImplementedException nie)
+		//{
+		//	Console.WriteLine("Caught NotImplementedException:");
+		//	Console.WriteLine(nie.Message);
+		//	Console.WriteLine(nie.StackTrace);
+		//}
+		//catch (Exception e)
+		//{
+		//	Console.WriteLine($"Exception caught: {e.Message}");
+		//	Console.WriteLine(e.Message);
+		//	Console.WriteLine(e.StackTrace);
+		//}
+		//finally
+		//{
+		//	// Resource cleanup code can go here	
+		//}
+
+		ITopic topic = new EventsTopic();
+		topic.Run();
 
 		Console.WriteLine("Press any key to exit...");
 		Console.ReadKey();
