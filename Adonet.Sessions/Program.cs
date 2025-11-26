@@ -2,10 +2,14 @@
 
 Console.WriteLine("Hello, Adonet.Sessions!");
 
-Startup.InitializeDatabase();
+//Startup.InitializeDatabase();
 string connectionString = "Data Source = demo-db.db";
 
-DataStore dataStore = new DataStore();
+// CRUD Operations
+DataStore dataStore = new DataStore(connectionString);
 //dataStore.ReadFromDatabase();
 //dataStore.UpdateTableData();
 //dataStore.SqlInjection();
+//dataStore.DeleteFromDatabase();
+//dataStore.InsertIntoDatabase();
+dataStore.Materialization();
