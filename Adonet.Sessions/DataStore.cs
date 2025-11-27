@@ -69,8 +69,8 @@ namespace Adonet.Sessions
 			int sid = reader.GetInt32(sidIndex);
 			Console.WriteLine($"Student id {sid}");
 
-			reader.Close();
-			command.Dispose();
+			//reader.Close();
+			//command.Dispose();
 
 			using SqliteCommand emailCommand = connection.CreateCommand();
 			emailCommand.CommandText = "Update students set Email = 'john.doe@gmail.com' where studentId=" + sid;
@@ -207,6 +207,36 @@ namespace Adonet.Sessions
 
 			int rowsAffected = updateCommand.ExecuteNonQuery();
 			Console.WriteLine($"Rows affected: {rowsAffected}");
+		}
+
+		public void RelatedData()
+		{
+			using SqliteConnection connection = new SqliteConnection(connectionString);
+			connection.Open();
+
+			using SqliteCommand command = connection.CreateCommand();
+			command.CommandText =
+				"select * from Students " +
+				"inner join Enrollments on Students.StudentId = Enrollments.StudentId " +
+				"inner join Courses on Enrollments.CourseId = Courses.CourseId where Students.StudentId = 1;";
+
+			using SqliteDataReader sqliteDataReader = command.ExecuteReader();
+			while (sqliteDataReader.Read())
+			{
+				int firstNameIndex = sqliteDataReader.GetOrdinal("FirstName");
+				string firstName = sqliteDataReader.GetString(firstNameIndex);
+
+				int lastNameIndex = sqliteDataReader.GetOrdinal("LastName");
+				string lastName = sqliteDataReader.GetString(lastNameIndex);
+
+				int courseNameIndex = sqliteDataReader.GetOrdinal("CourseName");
+				string courseName = sqliteDataReader.GetString(courseNameIndex);
+
+				int gradeIndex = sqliteDataReader.GetOrdinal("Grade");
+				string grade = sqliteDataReader.GetString(gradeIndex);
+
+				Console.WriteLine($"Student: {firstName} {lastName}, Course: {courseName}, Grade: {grade}");
+			}
 		}
 	}
 }

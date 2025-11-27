@@ -12,4 +12,5 @@ DataStore dataStore = new DataStore(connectionString);
 //dataStore.SqlInjection();
 //dataStore.DeleteFromDatabase();
 //dataStore.InsertIntoDatabase();
-dataStore.Materialization();
+//dataStore.Materialization();
+dataStore.RelatedData();
