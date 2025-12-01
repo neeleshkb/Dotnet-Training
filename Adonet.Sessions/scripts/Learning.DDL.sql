@@ -1,11 +1,15 @@
 use Learning;
 
-Create Table Students(
+Create Table Students
+(
 	StudentId int primary key identity(1,1),
-	FirstName nvarchar(50), -- nvarchar supports Unicode characters
+	FirstName nvarchar(50),
+	-- nvarchar supports Unicode characters
 	LastName nvarchar(50),
-	Dob date, -- YYYY-MM-DD
-	Active bit -- 0 or 1
+	Dob date,
+	-- YYYY-MM-DD
+	Active bit
+	-- 0 or 1
 )
 
 Create table Enrollments
@@ -30,3 +34,6 @@ Alter table Students Alter Column Dob date Not Null
 -- Adding a new colum to existing table
 Alter table Students Add Semseter int not null
 
+ALTER TABLE Enrollments ADD CONSTRAINT Unique_Student_Course UNIQUE (studentId, courseId);
+
+ALTER TABLE Students Add Email nvarchar(100) DEFAULT NULL;
