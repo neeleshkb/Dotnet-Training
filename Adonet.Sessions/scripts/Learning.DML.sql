@@ -21,6 +21,7 @@ UPDATE Students SET email = 'Shweta@yahoo.com' WHERE FirstName = 'Shweta';
 --insert into Courses (CourseName, Credits) Values ('Biology',9);
 --insert into Courses (CourseName, Credits) Values ('Maths',8);
 --insert into Courses (CourseName, Credits) Values ('Chemistry',6);
+insert into Courses (CourseName, Credits) Values ('Physics',7);
 
 -- A student can enroll in multiple courses
 -- A course can be enrolled by multiple students
