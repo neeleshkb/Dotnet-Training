@@ -37,3 +37,11 @@ insert into Courses (CourseName, Credits) Values ('Physics',7);
 
 --Delete from Enrollments where EnrollmentId = 2;
 
+-- Insert course scores for students
+insert into Scores (StudentId, CourseId, ScoreValue) 
+    values 
+    (1,1,95)
+    ,(1,2,88)
+    ,(1,3,76)
+    ,(2,1,89)
+    ,(2,2,92);

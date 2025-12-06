@@ -37,3 +37,13 @@ Alter table Students Add Semseter int not null
 ALTER TABLE Enrollments ADD CONSTRAINT Unique_Student_Course UNIQUE (studentId, courseId);
 
 ALTER TABLE Students Add Email nvarchar(100) DEFAULT NULL;
+
+CREATE TABLE Scores
+(
+	ScoreId int primary key identity(1,1),
+	StudentId int not null,
+	CourseId int not null,
+	ScoreValue int not null DEFAULT 0,
+	CONSTRAINT FK_Student FOREIGN KEY (StudentId) REFERENCES Students(StudentId),
+	CONSTRAINT FK_Course FOREIGN KEY (CourseId) REFERENCES Courses(CourseId)
+)
