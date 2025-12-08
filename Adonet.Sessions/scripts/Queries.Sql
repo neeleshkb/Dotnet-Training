@@ -33,3 +33,9 @@ select *
 from Students
 where Semseter IN (3,4,5,6,7,8);
 
+SELECT StudentId, COUNT(CourseId) as CourseCount From Enrollments
+GROUP BY StudentId
+
+SELECT DISTINCT StudentId from Enrollments
+
+SELECT * from Students ORDER BY StudentId desc;
