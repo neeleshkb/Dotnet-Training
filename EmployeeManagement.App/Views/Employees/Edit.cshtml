@@ -1,0 +1,16 @@
+﻿@model EmployeeManagement.App.Models.Employee;
+
+<form method="post" asp-action="Edit">
+
+	<input type="hidden" asp-for="Id" />
+	
+	<div>
+		<label asp-for="FirstName">First Name</label>
+		<input asp-for="FirstName" />
+	</div>
+	<div>
+		<label asp-for="LastName">Last Name</label>
+		<input asp-for="LastName" />
+	</div>
+	<button type="submit">Save</button>
+</form>

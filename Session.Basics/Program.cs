@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace Session.Basics;
 
@@ -71,8 +73,20 @@ public class Program
 		//	// Resource cleanup code can go here	
 		//}
 
-		ITopic topic = new EventsTopic();
-		topic.Run();
+		//ITopic topic = new EventsTopic();
+		//topic.Run();
+
+
+
+		List<int> numbers = new List<int>();
+		numbers.Add(10);
+		numbers.Add(20);
+		numbers.Add(30);
+
+		int v = numbers.First();
+		int v1 = numbers.FirstOrDefault();
+
+		List<string> strings = numbers.Select(n => n.ToString()).ToList();
 
 		Console.WriteLine("Press any key to exit...");
 		Console.ReadKey();

@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Calculator.App", "Calculato
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Adonet.Sessions", "Adonet.Sessions\Adonet.Sessions.csproj", "{6CABE23A-DC4F-4A42-BC3A-D6C5F833E9B0}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EmployeeManagement.App", "EmployeeManagement.App\EmployeeManagement.App.csproj", "{0D3DA1BD-C4AB-4956-A6C6-477EA936A37E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{6CABE23A-DC4F-4A42-BC3A-D6C5F833E9B0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6CABE23A-DC4F-4A42-BC3A-D6C5F833E9B0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6CABE23A-DC4F-4A42-BC3A-D6C5F833E9B0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0D3DA1BD-C4AB-4956-A6C6-477EA936A37E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0D3DA1BD-C4AB-4956-A6C6-477EA936A37E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0D3DA1BD-C4AB-4956-A6C6-477EA936A37E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0D3DA1BD-C4AB-4956-A6C6-477EA936A37E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
