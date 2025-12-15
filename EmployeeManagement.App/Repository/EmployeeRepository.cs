@@ -12,9 +12,9 @@ namespace EmployeeManagement.App.Repository
 			_ConnectionString = connectionString;
 		}
 
-		public List<Employee> ListAllEmployees()
+		public List<EmployeeViewModel> ListAllEmployees()
 		{
-			List<Employee> employees = new List<Employee>();
+			List<EmployeeViewModel> employees = new List<EmployeeViewModel>();
 			using SqlConnection connection = new SqlConnection(_ConnectionString);
 			connection.Open();
 
@@ -33,7 +33,7 @@ namespace EmployeeManagement.App.Repository
 				int lastNameIndex = reader.GetOrdinal("LastName");
 				string lastName = reader.GetString(lastNameIndex);
 
-				Employee employee = new Employee
+				EmployeeViewModel employee = new EmployeeViewModel
 				{
 					Id = id,
 					FirstName = firstName,
@@ -44,7 +44,7 @@ namespace EmployeeManagement.App.Repository
 			return employees;
 		}
 
-		public Employee Create(Employee employee)
+		public EmployeeViewModel Create(EmployeeViewModel employee)
 		{
 			using SqlConnection connection = new SqlConnection(_ConnectionString);
 			connection.Open();
@@ -63,7 +63,7 @@ namespace EmployeeManagement.App.Repository
 			return employee;
 		}
 
-		public Employee Update(Employee employee)
+		public EmployeeViewModel Update(EmployeeViewModel employee)
 		{
 			using SqlConnection connection = new SqlConnection(_ConnectionString);
 			connection.Open();
@@ -89,7 +89,7 @@ namespace EmployeeManagement.App.Repository
 			command.ExecuteNonQuery();
 		}
 
-		public Employee Get(int id)
+		public EmployeeViewModel Get(int id)
 		{
 			using SqlConnection connection = new SqlConnection(_ConnectionString);
 			connection.Open();
@@ -108,7 +108,7 @@ namespace EmployeeManagement.App.Repository
 				string firstName = reader.GetString(firstNameIndex);
 				int lastNameIndex = reader.GetOrdinal("LastName");
 				string lastName = reader.GetString(lastNameIndex);
-				Employee employee = new Employee
+				EmployeeViewModel employee = new EmployeeViewModel
 				{
 					Id = empId,
 					FirstName = firstName,

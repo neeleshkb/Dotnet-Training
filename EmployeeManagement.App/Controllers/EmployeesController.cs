@@ -22,13 +22,13 @@ namespace EmployeeManagement.App.Controllers
 
 		public IActionResult Index()
 		{
-			List<Employee> employees = _employeeRepository.ListAllEmployees();
+			List<EmployeeViewModel> employees = _employeeRepository.ListAllEmployees();
 			return View(employees);
 		}
 
 		public IActionResult Details()
 		{
-			Employee employee = new Employee
+			EmployeeViewModel employee = new EmployeeViewModel
 			{
 				Id = 1,
 				FirstName = "John",
@@ -40,27 +40,42 @@ namespace EmployeeManagement.App.Controllers
 		[HttpGet]
 		public IActionResult Edit(int id)
 		{
-			Employee employee = _employeeRepository.Get(id);
+			EmployeeViewModel employee = _employeeRepository.Get(id);
 			return View(employee);
 		}
 
 		[HttpPost]
-		public IActionResult Edit(Employee employee)
+		public IActionResult Edit(EmployeeViewModel employee)
 		{
-			Employee employee1 = _employeeRepository.Update(employee);
+			if (!ModelState.IsValid)
+			{
+				return View(employee);
+			}
+
+			EmployeeViewModel employee1 = _employeeRepository.Update(employee);
 			return RedirectToAction("Index");
 		}
 
 		[HttpGet]
 		public IActionResult Create()
 		{
-			return View();
+			return View(new CreateEmployeeViewModel());
 		}
 
 		[HttpPost]
-		public IActionResult Create(Employee employee)
+		public IActionResult Create(CreateEmployeeViewModel employee)
 		{
-			_employeeRepository.Create(employee);
+			if (!ModelState.IsValid)
+			{
+				return View(employee);
+			}
+
+			// DTO to Model conversion
+			EmployeeViewModel emp = new EmployeeViewModel();
+			emp.FirstName = employee.FirstName;
+			emp.LastName = employee.LastName;
+
+			_employeeRepository.Create(emp);
 			return RedirectToAction("Index");
 		}
 

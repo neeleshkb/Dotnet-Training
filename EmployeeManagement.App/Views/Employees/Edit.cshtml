@@ -1,4 +1,4 @@
-﻿@model EmployeeManagement.App.Models.Employee;
+﻿@model EmployeeManagement.App.Models.EmployeeViewModel;
 
 <form method="post" asp-action="Edit">
 
@@ -7,10 +7,12 @@
 	<div>
 		<label asp-for="FirstName">First Name</label>
 		<input asp-for="FirstName" />
+		<span asp-validation-for="FirstName"></span>
 	</div>
 	<div>
 		<label asp-for="LastName">Last Name</label>
-		<input asp-for="LastName" />
+		<input asp-for="LastName" />   
+		<span asp-validation-for="LastName"></span>
 	</div>
 	<button type="submit">Save</button>
 </form>
