@@ -20,6 +20,11 @@ if (!app.Environment.IsDevelopment())
 	app.UseHsts();
 }
 
+if (app.Environment.IsDevelopment())
+{
+	app.UseDeveloperExceptionPage();
+}
+
 app.UseHttpsRedirection();
 app.UseStaticFiles();
 
@@ -29,6 +34,6 @@ app.UseAuthorization();
 
 app.MapControllerRoute(
 	name: "default",
-	pattern: "{controller=Home}/{action=Index}/{id?}");
+	pattern: "{controller=Employees}/{action=Index}/{id?}");
 
 app.Run();
