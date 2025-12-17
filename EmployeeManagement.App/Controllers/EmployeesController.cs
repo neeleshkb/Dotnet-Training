@@ -40,6 +40,7 @@ namespace EmployeeManagement.App.Controllers
 		[HttpGet]
 		public IActionResult Edit(int id)
 		{
+			ViewData.Add("Title", "Edit Employee");
 			EmployeeViewModel employee = _employeeRepository.Get(id);
 			return View(employee);
 		}
@@ -59,6 +60,7 @@ namespace EmployeeManagement.App.Controllers
 		[HttpGet]
 		public IActionResult Create()
 		{
+			ViewBag.Title = "Create an Employee";
 			return View(new CreateEmployeeViewModel());
 		}
 
