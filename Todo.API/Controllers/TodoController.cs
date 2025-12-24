@@ -13,16 +13,24 @@ namespace Todo.API.Controllers
 			new TodoItem { Id=2, Description = "Learn ASP.NET Core" },
 			new TodoItem { Id=3, Description = "Build Web API" }
 		};
+		private readonly ILogger<TodoController> _Logger;
+
+		public TodoController(ILogger<TodoController> logger)
+		{
+			_Logger = logger;
+		}
 
 		[HttpGet]
 		public IActionResult ListAllTodoItems()
 		{
+			throw new Exception("Sample exception for demonstration purposes.");
 			return Ok(Items);
 		}
 
 		[HttpPost]
 		public IActionResult AddTodoItem(CreateTodoItemRequest item)
 		{
+			throw new Exception("Sample exception for demonstration purposes.");
 			Items.Add(new TodoItem { Description = item.Description });
 			return Created("Todo", item);
 		}
