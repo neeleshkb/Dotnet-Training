@@ -1,3 +1,4 @@
+using Todo.API.Controllers;
 using Todo.API.Filters;
 using Todo.API.Middlewares;
 using Todo.API.Services;
@@ -18,6 +19,9 @@ builder.Services.AddControllers(options =>
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddSingleton<ProductService>();
+
+IConfigurationSection configurationSection = builder.Configuration.GetSection("App");
+builder.Services.Configure<ApplicationSettings>(configurationSection);
 
 builder.Services.AddExceptionHandler<GlobalExceptionHandler>();
 builder.Services.AddProblemDetails();
