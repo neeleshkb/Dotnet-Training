@@ -1,4 +1,5 @@
 using Todo.API.Filters;
+using Todo.API.Middlewares;
 using Todo.API.Services;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -18,7 +19,14 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddSingleton<ProductService>();
 
+builder.Services.AddExceptionHandler<GlobalExceptionHandler>();
+builder.Services.AddProblemDetails();
+
 var app = builder.Build();
+
+//app.UseMiddleware<ExceptionMiddleware>();
+app.UseExceptionHandler();
+
 app.Use(async (context, next) =>
 {
 	var logger = app.Services.GetRequiredService<ILogger<Program>>();

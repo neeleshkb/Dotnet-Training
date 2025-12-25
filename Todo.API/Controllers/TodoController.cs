@@ -30,7 +30,7 @@ namespace Todo.API.Controllers
 		[HttpPost]
 		public IActionResult AddTodoItem(CreateTodoItemRequest item)
 		{
-			throw new Exception("Sample exception for demonstration purposes.");
+			throw new InvalidDataException("Sample exception for demonstration purposes.");
 			Items.Add(new TodoItem { Description = item.Description });
 			return Created("Todo", item);
 		}
